@@ -1,0 +1,11 @@
+<h3>Login page</h3>
+<form *ngIf="!mediaService.loggedIn" (submit)="doLogin()" >
+  <input type="text" name="username" [(ngModel)]="user.username" required>
+  <input type="password" name="password" [(ngModel)]="user.password" required>
+  <button type="submit">Login</button>
+</form>
+
+<div *ngIf="mediaService.loggedIn">
+  <p>Already logged in.</p>
+  <button (click)="logout()">Logout</button>
+</div>
